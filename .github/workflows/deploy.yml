@@ -41,6 +41,13 @@ jobs:
         with:
           path: dist
 
+      - name: Run JXH3089_session2_lecture_biosignals.md
+        run: |
+          echo 'Running JXH3089_session2_lecture_biosignals.md'
+          # Add the commands to process the Markdown file here
+          # For example, you might use a tool like pandoc to convert it
+          pandoc JXH3089_session2_lecture_biosignals.md -o output.pdf
+
   deploy:
     environment:
       name: github-pages
