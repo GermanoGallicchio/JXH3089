@@ -32,7 +32,7 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build --base /JXH3089/slides12.md/
+        run: nr build --base /JXH3089/ slides12.md
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
