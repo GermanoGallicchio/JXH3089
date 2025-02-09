@@ -35,7 +35,7 @@ jobs:
         run: |
           for file in *.md; do
             subdirectory=$(basename "$file" .md)
-            nr build --base /JXH3089/$subdirectory/
+            nr build --base /JXH3089/$subdirectory/ *.md
             mkdir -p dist/$subdirectory
             mv dist/* dist/$subdirectory/
           done
