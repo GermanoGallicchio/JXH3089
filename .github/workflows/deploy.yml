@@ -37,7 +37,7 @@ jobs:
             subdirectory=$(basename "$file" .md)
             mkdir -p dist/$subdirectory
             nr build --base /JXH3089/ "$file"
-            mv dist/* dist/$subdirectory/
+            find dist -maxdepth 1 -type f -exec mv {} dist/$subdirectory/ \;
           done
 
       - name: Setup Pages
