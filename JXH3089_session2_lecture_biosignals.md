@@ -1,6 +1,26 @@
 ---
 theme: seriph
 title: biosignals
+
+# author field for exported PDF or PPTX
+author: Germano Gallicchio
+
+# enable browser exporter, can be boolean, 'dev' or 'build'
+browserExporter: true
+
+# filename of the export file
+exportFilename: slides-exported
+
+# export options
+# use export CLI options in camelCase format
+# Learn more: https://sli.dev/guide/exporting.html
+export:
+  format: pdf
+  timeout: 30000
+  dark: false
+  withClicks: false
+  withToc: false
+  
 layout: cover
 transition: fade
 mdc: true
