@@ -33,11 +33,12 @@ jobs:
 
       - name: Build
         run: |
-          for file in *.md; do
-            subdirectory=$(basename "$file" .md)
-            mkdir -p dist/$subdirectory
-            pnpm build --base /JXH3089/ "$file" -o dist/$subdirectory/
-          done
+          # for file in *.md; do
+          #   subdirectory=$(basename "$file" .md)
+          #   mkdir -p dist/$subdirectory
+          #   pnpm build --base /JXH3089/ "$file" -o dist/$subdirectory/
+          # done
+          pnpm build --base /JXH3089/ *.md
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
