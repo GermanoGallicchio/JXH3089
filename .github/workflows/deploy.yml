@@ -25,18 +25,18 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+      - name: Setup pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: nci
+        run: pnpm install
 
       - name: Build
         run: |
           for file in *.md; do
             subdirectory=$(basename "$file" .md)
             mkdir -p dist/$subdirectory
-            nr build --base /JXH3089/ "$file" -o dist/$subdirectory/
+            pnpm build --base /JXH3089/ "$file" -out dist/$subdirectory/
           done
 
       - name: Setup Pages
