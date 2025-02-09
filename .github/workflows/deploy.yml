@@ -35,7 +35,7 @@ jobs:
         run: |
           for file in *.md; do
             subdirectory=$(basename "$file" .md)
-            nr build --base /JXH3089/$subdirectory/
+            nr build --base /JXH3089/
             mkdir -p dist/$subdirectory
             find dist -maxdepth 1 -mindepth 1 -not -name $subdirectory -exec mv {} dist/$subdirectory/ \;
           done
