@@ -25,20 +25,17 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Setup pnpm
-        run: npm install -g pnpm
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build
         run: |
           for file in *.md; do
             subdirectory=$(basename "$file" .md)
             mkdir -p dist/$subdirectory
-            npm build --base /JXH3089/ "$file" -o dist/$subdirectory/
+            npm run build -- --base /JXH3089/ "$file" -o dist/$subdirectory/
           done
-          # npm build --base /JXH3089/ *.md
+          # npm run build -- --base /JXH3089/ *.md
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
