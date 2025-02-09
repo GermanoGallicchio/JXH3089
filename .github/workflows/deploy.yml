@@ -25,17 +25,14 @@ jobs:
         with:
           node-version: 'lts/*'
 
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
       - name: Install dependencies
-        run: npm install
+        run: nci
 
       - name: Build
-        run: |
-          #for file in *.md; do
-          #  subdirectory=$(basename "$file" .md)
-          #  mkdir -p dist/$subdirectory
-          #  npm run build -- --base /JXH3089/ "$file" -o dist/$subdirectory/
-          #done
-          npm run build -- --base /JXH3089/ *.md
+        run: nr build --base /${{github.event.repository.name}}/ *.md
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +44,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://GermanoGallicchio.github.io/JXH3089
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
