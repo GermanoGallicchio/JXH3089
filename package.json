@@ -16,6 +16,7 @@
     "slidev-theme-frankfurt": "^1.0.6",
     "slidev-theme-hep": "^0.1.1",
     "slidev-theme-neversink": "^0.3.6",
+    "playwright": "^1.20.0",
     "vue": "^3.5.13"
   }
 }
