@@ -28,14 +28,11 @@ jobs:
       - name: Setup @antfu/ni
         run: npm i -g @antfu/ni
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-      
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-  
+        run: nci
+
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/ *.md
+        run: nr build --base /${{github.event.repository.name}}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
